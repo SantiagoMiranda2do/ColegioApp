@@ -1,23 +1,27 @@
-﻿using DomainLayerProject.Entidades.EntidadComun;
-using DomainLayerProject.Interfaces;
+﻿using DomainLayerProject.DTOs.DTOValidacion;
 
 namespace DomainLayerProject.Especificaciones
 {
-    public class TelefonoEspecificacion : IEspecificacion<Persona>
+    public class TelefonoEspecificacion<T>
     {
         public List<string> ErrorMessage => throw new NotImplementedException();
 
-        public bool IsSatisfiedBy(Persona entity)
+        public bool IsSatisfiedBy(T entity)
         {
             throw new NotImplementedException();
         }
 
-        private bool EsTelefonoValido(Persona Telefono)
+        private bool EsTelefonoValido(int c)
         {
             foreach (char c in Telefono)
             {
                 if (char.IsLetter(c))
                 {
+                    validationErrors.Add(new ValidacionDTO
+                    {
+                        PropertyName = "Telefono",
+                        ErrorMessage = "Ingrese su numero de telefono correctamente."
+                    });
                     return false;
                 }
             }

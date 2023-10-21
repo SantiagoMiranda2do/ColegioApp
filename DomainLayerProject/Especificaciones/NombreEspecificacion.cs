@@ -1,30 +1,40 @@
-﻿using DomainLayerProject.Entidades.EntidadComun;
-using DomainLayerProject.Interfaces;
+﻿using DomainLayerProject.DTOs.DTOValidacion;
+using DomainLayerProject.Entidades.EntidadComun;
 using System.Text.RegularExpressions;
 
 namespace DomainLayerProject.Especificaciones
 {
-    public class NombreEspecificacion : IEspecificacion<Persona>
+    public class NombreEspecificacion<t>
     {
         public List<string> ErrorMessage => throw new NotImplementedException();
 
 
 
-        private bool IsSatisfiedBy(Persona persona)
+        private bool IsSatisfiedBy(t entity)
         {
 
-            if (string.IsNullOrEmpty(persona.Nombre))
+            if (string.IsNullOrEmpty(string.Nombre))
             {
+                validationErrors.Add(new ValidacionDTO
+                {
+                    PropertyName = "Nombre",
+                    ErrorMessage = "Ingrese su nombre correctamente."
+                });
                 return false;
             }
 
 
-            if (string.IsNullOrEmpty(persona.Apellido))
+            if (string.IsNullOrEmpty(string.Apellido))
             {
+                validationErrors.Add(new ValidacionDTO
+                {
+                    PropertyName = "Nombre",
+                    ErrorMessage = "Ingrese su nombre correctamente."
+                });
                 return false;
             }
 
-            public bool noNumero(Persona persona)
+            bool noNumero(Persona persona)
             {
 
                 return !Regex.IsMatch(persona.Nombre, @"\d");
@@ -41,9 +51,6 @@ namespace DomainLayerProject.Especificaciones
             return true;
         }
 
-        bool IEspecificacion<Persona>.IsSatisfiedBy(Persona entity)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

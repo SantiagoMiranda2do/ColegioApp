@@ -3,7 +3,7 @@ using DomainLayerProject.Repositorios.RepositorioComun;
 
 namespace DomainLayerProject.Repositorios
 {
-    public interface IAlumnoRepositorio : RepositoriosComun
+    public interface IAlumnoRepositorio : RepositoriosComun<Alumnos>
     {
 
         IEnumerable<Alumnos> GetAll();

@@ -1,4 +1,4 @@
-﻿namespace ApplicationLayerProyect.DTOs.DTOComun
+﻿namespace DomainLayerProject.DTOs.DTOComun
 {
     public class PersonaDTO
     {

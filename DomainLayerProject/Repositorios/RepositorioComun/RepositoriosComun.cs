@@ -1,14 +1,14 @@
 ﻿namespace DomainLayerProject.Repositorios.RepositorioComun
 {
-    public interface RepositoriosComun
+    public interface RepositoriosComun<T> where T : class
     {
         Task GetById(int id);
         Task GetByName(string Nombre);
         Task GetByApellido(string Apellido);
         Task GetByEdad(int Edad);
-        Task Add(String Nombre);
-        Task Update(String Nombre);
+        Task Add(T entity);
+        Task Update(T entity);
         Task Delete(int id);
-
+        Task SaveChanges();
     }
 }

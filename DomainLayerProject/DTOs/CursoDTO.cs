@@ -1,6 +1,6 @@
 ﻿using DomainLayerProject.Entidades;
 
-namespace ApplicationLayerProyect.DTOs
+namespace DomainLayerProject.DTOs
 {
     public class CursoDTO
     {

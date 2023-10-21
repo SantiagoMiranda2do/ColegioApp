@@ -1,6 +1,6 @@
-﻿using ApplicationLayerProyect.DTOs.DTOComun;
+﻿using DomainLayerProject.DTOs.DTOComun;
 
-namespace ApplicationLayerProyect.DTOs
+namespace DomainLayerProject.DTOs
 {
     public class ProfesorDTO : PersonaDTO
     {

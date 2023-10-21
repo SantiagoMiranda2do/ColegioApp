@@ -1,28 +1,35 @@
-﻿using DomainLayerProject.Entidades.EntidadComun;
-using DomainLayerProject.Interfaces;
+﻿using DomainLayerProject.DTOs.DTOValidacion;
 
 namespace DomainLayerProject.Especificaciones
 {
-    public class DNIEspecificacion : IEspecificacion<Persona>
+    public class DNIEspecificacion<t>
     {
-        public List<string> ErrorMessage => throw new NotImplementedException();
 
-        public bool IsSatisfiedBy(Persona entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        private bool EsDniValido(Persona DNI)
+
+
+        private bool EsDniValido(t entity, string v)
         {
 
-            if (ContieneLetras(DNI))
+            if (ContieneLetras(v))
             {
+                validationErrors.Add(new ValidacionDTO
+                {
+                    PropertyName = "DNI",
+                    ErrorMessage = "El dni ingresado contiene caracteres invalidos."
+                });
+
                 return false;
             }
 
 
-            if (ContienePuntos(DNI))
+            if (ContienePuntos(string))
             {
+                validationErrors.Add(new ValidacionDTO
+                {
+                    PropertyName = "DNI",
+                    ErrorMessage = "El dni ingresado contiene caracteres invalidos."
+                });
                 return false;
             }
 
@@ -31,9 +38,9 @@ namespace DomainLayerProject.Especificaciones
             return true;
         }
 
-        private bool ContieneLetras(Persona DNI)
+        private bool ContieneLetras(string)
         {
-            foreach (char c in DNI)
+            foreach (char c in string)
             {
                 if (char.IsLetter(c))
                 {
@@ -46,6 +53,7 @@ namespace DomainLayerProject.Especificaciones
         private bool ContienePuntos(string dni)
         {
             return dni.Contains(".");
+
         }
 
 

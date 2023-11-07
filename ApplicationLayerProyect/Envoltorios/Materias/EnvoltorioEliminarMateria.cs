@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApplicationLayerProyect.Envoltorios.Materias
+﻿namespace ApplicationLayerProyect.Envoltorios.Materias
 {
-    internal class EnvoltorioEliminarMateria
+    public class EnvoltorioEliminarMateria : EnvoltorioBase
     {
+
+        public int IdMateria { get; set; }
     }
 }

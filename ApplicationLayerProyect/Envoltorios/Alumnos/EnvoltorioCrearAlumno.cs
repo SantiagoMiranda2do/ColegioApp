@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainLayerProject.DTOs.DTOValidacion;
 
 namespace ApplicationLayerProyect.Envoltorios.Alumnos
 {
-    internal class EnvoltorioCrearAlumno
+    public class EnvoltorioCrearAlumno : EnvoltorioBase
     {
+
+
+        public int IdAlumno { get; set; }
+        public List<ValidacionDTO>? ValidacionErrores { get; set; }
     }
 }

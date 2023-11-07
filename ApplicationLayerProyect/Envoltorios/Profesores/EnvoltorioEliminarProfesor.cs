@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApplicationLayerProyect.Envoltorios.Profesores
+﻿namespace ApplicationLayerProyect.Envoltorios.Profesores
 {
-    internal class EnvoltorioEliminarProfesor
+    public class EnvoltorioEliminarProfesor : EnvoltorioBase
     {
+        public int IdProfesor { get; set; }
     }
 }

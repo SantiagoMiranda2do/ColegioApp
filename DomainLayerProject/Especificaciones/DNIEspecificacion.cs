@@ -1,64 +1,40 @@
 ﻿using DomainLayerProject.DTOs.DTOValidacion;
 
-namespace DomainLayerProject.Especificaciones
+namespace DomainLayerProject.Especificaciones;
+
+
+
+public class DNIEspecificacion<T>
 {
-    public class DNIEspecificacion<t>
+    readonly List<ValidacionDTO> _errors = new List<ValidacionDTO>();
+
+    public bool EsDniValido(T entity, string dni)
     {
-
-
-
-
-        private bool EsDniValido(t entity, string v)
+        if (ContieneCaracteresInvalidos(dni))
         {
-
-            if (ContieneLetras(v))
+            _errors.Add(new ValidacionDTO
             {
-                validationErrors.Add(new ValidacionDTO
-                {
-                    PropertyName = "DNI",
-                    ErrorMessage = "El dni ingresado contiene caracteres invalidos."
-                });
+                PropertyName = "DNI",
+                ErrorMessage = "El DNI ingresado contiene caracteres inválidos."
+            });
 
-                return false;
-            }
-
-
-            if (ContienePuntos(string))
-            {
-                validationErrors.Add(new ValidacionDTO
-                {
-                    PropertyName = "DNI",
-                    ErrorMessage = "El dni ingresado contiene caracteres invalidos."
-                });
-                return false;
-            }
-
-
-
-            return true;
-        }
-
-        private bool ContieneLetras(string)
-        {
-            foreach (char c in string)
-            {
-                if (char.IsLetter(c))
-                {
-                    return true; // La cadena contiene al menos una letra.
-                }
-            }
             return false;
         }
 
-        private bool ContienePuntos(string dni)
+        return true;
+    }
+
+    private bool ContieneCaracteresInvalidos(string dni)
+    {
+        foreach (char c in dni)
         {
-            return dni.Contains(".");
-
+            if (char.IsLetter(c) || dni.Contains("."))
+            {
+                return true; // La cadena contiene caracteres inválidos.
+            }
         }
-
-
-
-
-
+        return false;
     }
 }
+
+

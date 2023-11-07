@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainLayerProject.DTOs.DTOValidacion;
 
 namespace ApplicationLayerProyect.Envoltorios.Materias
 {
-    internal class EnvoltorioCrearMateria
+    public class EnvoltorioCrearMateria : EnvoltorioBase
     {
+
+
+        public int IdMateria { get; set; }
+        public List<ValidacionDTO>? ValidacionErrores { get; set; }
     }
 }

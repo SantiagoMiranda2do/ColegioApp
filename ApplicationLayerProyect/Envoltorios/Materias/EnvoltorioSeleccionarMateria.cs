@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainLayerProject.DTOs.Respuestas;
 
 namespace ApplicationLayerProyect.Envoltorios.Materias
 {
-    internal class EnvoltorioSeleccionarMateria
+    public class EnvoltorioSeleccionarMateria : EnvoltorioBase
     {
+        public RespuestaMateria Materia { get; set; }
+
+
     }
 }

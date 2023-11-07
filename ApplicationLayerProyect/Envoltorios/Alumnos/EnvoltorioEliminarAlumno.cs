@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ApplicationLayerProyect.Envoltorios.Alumnos
+﻿namespace ApplicationLayerProyect.Envoltorios.Alumnos
 {
-    internal class EnvoltorioEliminarAlumno
+    public class EnvoltorioEliminarAlumno : EnvoltorioBase
     {
+
+        public int IdAlumno { get; set; }
     }
 }

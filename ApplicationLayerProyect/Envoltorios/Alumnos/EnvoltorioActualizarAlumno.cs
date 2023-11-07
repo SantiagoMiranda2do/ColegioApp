@@ -1,6 +1,12 @@
-﻿namespace ApplicationLayerProyect.Envoltorios.Alumnos
+﻿using DomainLayerProject.DTOs.DTOValidacion;
+
+namespace ApplicationLayerProyect.Envoltorios.Alumnos
 {
-    internal class EnvoltorioActualizarAlumno
+    public class EnvoltorioActualizarAlumno : EnvoltorioBase
     {
+
+        public int IdAlumno { get; set; }
+        public string NombreAlumno { get; set; }
+        public List<ValidacionDTO>? ValidationErrors { get; set; }
     }
 }

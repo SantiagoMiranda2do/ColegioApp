@@ -1,26 +1,38 @@
-﻿namespace DomainLayerProject.Especificaciones
+﻿using DomainLayerProject.DTOs.DTOValidacion;
+
+namespace DomainLayerProject.Especificaciones;
+
+public class EdadEspecificacion<T>
 {
-    public class EdadEspecificacion<t>
+    readonly List<ValidacionDTO> _errors = new List<ValidacionDTO>();
+
+    public bool EsEdadValida(T entity, int edad)
     {
-        public List<string> ErrorMessage => throw new NotImplementedException();
-
-        public bool IsSatisfiedBy(t entity)
+        if (EsEdadInvalida(edad))
         {
-            throw new NotImplementedException();
+            _errors.Add(new ValidacionDTO
+            {
+                PropertyName = "Edad",
+                ErrorMessage = "La edad ingresada no es válida."
+            });
+
+            return false;
         }
 
+        return true;
+    }
 
-        private bool EsEnteroValido(string v)
-        {
-            int edad;
-            return int.TryParse(v, out edad);
-        }
-
-
-
-
-
-
-
+    private bool EsEdadInvalida(int edad)
+    {
+        return edad < 0 || edad > 120; // Ejemplo de validación, ajusta según tus requisitos.
     }
 }
+
+
+
+
+
+
+
+
+

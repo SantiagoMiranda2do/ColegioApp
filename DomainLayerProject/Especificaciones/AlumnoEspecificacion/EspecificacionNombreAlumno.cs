@@ -5,7 +5,7 @@ namespace DomainLayerProject.Especificaciones.AlumnoEspecificacion
 {
     public class EspecificacionNombreAlumno : NombreEspecificacion<Alumnos>, IEspecificacion<Alumnos>
     {
-        public List<string> ErrorMessage => throw new NotImplementedException();
+        public new List<string> ErrorMessage => throw new NotImplementedException();
 
         public bool IsSatisfiedBy(Alumnos entity)
         {
